@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Class Modification</title>
+  <style>
+    .theme-icon{
+      height: 30px;
+      width: 30px;
+      cursor: pointer;
+      padding: 10px;
+      border-radius: none;
+      background-color: white; 
+    }
+    .active{
+       border: 1px solid rgb(214, 53, 53);
+       
+    }
+    .theme-dark{
+      background-color: black;
+      color: white;
+    }
+    .theme-light{
+      background-color: white;
+      color: black;
+    }
+</style>
+</head>
+<body id="body">
+  <div>
+    <img src="./dark-mode.png" class="theme-icon active " id="img-dark" 
+    onclick="darkMode()"/>
+    <img src="./light-mode - Copy.png" class="theme-icon " id="img-light" 
+    onclick="lightMode()"/>
+  </div>
+  <h1>This is Light/dark mode theme changer</h1>
+
+
+  <p>
+    Dark Mode vs. Light Mode: The Great Debate
+    The dark mode is ideal for reducing eye strain in low-light conditions and conserving battery power. It might also enhance focus and productivity, particularly for late-night workers. On the other hand, the light mode can improve reading comprehension, speed and might even foster creativity</p>
+  <script>
+function darkMode(){
+  const imgDark = document.getElementById(`img-dark`);
+  imgDark.classList.add(`active`);
+
+  const imgLight= document.getElementById(`img-light`);
+  imgLight.classList.remove(`active`);
+
+  const bodyElement=document.getElementById("body");
+  bodyElement.className=`theme-dark`;
+}
+function lightMode(){
+  const imgDark= document.getElementById(`img-dark`);
+  imgDark.classList.remove(`active`);
+
+  const imgLight=  document.getElementById(`img-light`);
+  imgLight.classList.add(`active`);
+
+  const bodyElement=document.getElementById(`body`);
+  bodyElement.className=`theme-light`;
+
+}
+  </script>
+  </body>
+</html>
